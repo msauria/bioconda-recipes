@@ -1,17 +1,20 @@
 package:
   name: picopore
-  version: "1.0.0"
+  version: "1.2.0"
 
 source:
-  fn: picopore-1.0.0.zip
-  url: https://pypi.python.org/packages/15/3e/665087074c9c68550ea7e9091048e29360f5be007958cdc68d71a0bb2d02/picopore-1.0.0.zip
-  md5: 1364d2306b7627ddc846335fd9048526
+  fn: picopore-1.2.0.zip
+  url: https://files.pythonhosted.org/packages/98/e6/2431eebb5370c84e4071475206be805f7059d83ead8c53ba509ecf6e25d6/picopore-1.2.0.zip
+  md5: 5022bda29808de873c676b47727d1d6d
 
 build:
   entry_points:
     - picopore = picopore.__main__:main
+    - picopore-test = picopore.test:main
+    - picopore-realtime = picopore.realtime:main
+    - picopore-rename = picopore.rename:main
   number: 0
-  skip: True # [not py27]
+  script: $PYTHON setup.py install --single-version-externally-managed --record=record.txt
 
 requirements:
   build:
@@ -20,12 +23,14 @@ requirements:
     - h5py >2.2.0
     - watchdog
     - hdf5
+    - future
 
   run:
     - python
     - h5py >2.2.0
     - watchdog
     - hdf5
+    - future
 
 test:
   imports:
@@ -33,6 +38,9 @@ test:
 
   commands:
     - picopore --help
+    - picopore-test --help
+    - picopore-realtime --help
+    - picopore-rename --help
 
 about:
   home: https://github.com/scottgigante/picopore

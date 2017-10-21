@@ -1,11 +1,12 @@
+{% set version="1.0.20170914161842" %}
 package:
   name: arvados-cwl-runner
-  version: '1.0.20170216151734'
+  version: {{ version }}
 
 source:
-  fn: arvados-cwl-runner-1.0.20170216151734.tar.gz
-  url: https://pypi.python.org/packages/3f/2b/104ef1fad62c96a90e136459f49d43d7b487005f1b84637a80bdbe7a9722/arvados-cwl-runner-1.0.20170216151734.tar.gz
-  md5: 290b1b626e5dafd9de993bdc2d7244a3
+  fn: arvados-cwl-runner-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/a/arvados-cwl-runner/arvados-cwl-runner-{{ version }}.tar.gz
+  md5: 47549b214df3cfcb8fc576e7ca6d712b
 
 build:
   number: 0
@@ -15,13 +16,15 @@ requirements:
   build:
     - python
     - setuptools
-    - cwltool ==1.0.20170217172322
-    - arvados-python-client >=0.1.20161123074954
+    - ruamel.yaml >=0.13.7,<0.15
+    - cwltool ==1.0.20170828135420
+    - arvados-python-client >=0.1.20170818194607
 
   run:
     - python
-    - cwltool ==1.0.20170217172322
-    - arvados-python-client >=0.1.20161123074954
+    - ruamel.yaml >=0.13.7,<0.15
+    - cwltool ==1.0.20170828135420
+    - arvados-python-client >=0.1.20170818194607
 
 test:
   imports:

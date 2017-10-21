@@ -1,21 +1,21 @@
 package:
   name: galaxy-lib
-  version: "17.1.2"
+  version: "17.9.7"
 
 source:
-  fn: galaxy-lib-17.1.2.tar.gz
-  url: https://pypi.python.org/packages/48/49/9e39d0b9a43dde2828d8c57c487df6ba805a2453d52db6a6e283aa3b0ffa/galaxy-lib-17.1.2.tar.gz
-  md5: c830f1acf16d471a112df024e0b5326f
+  fn: galaxy-lib-17.9.7.tar.gz
+  url: https://pypi.python.org/packages/74/32/f6c6e2525fd7c84d9f1f16cab24e18ee794b2a058c9359de462e970cfb01/galaxy-lib-17.9.7.tar.gz
+  md5: f1e96874146944bdfb1afd91ffdb7d2d
 
 build:
   preserve_egg_dir: True
-  number: 0
+  number: 1
   entry_points:
     - mulled-build=galaxy.tools.deps.mulled.mulled_build:main
     - mulled-build-channel=galaxy.tools.deps.mulled.mulled_build_channel:main
     - mulled-build-tool=galaxy.tools.deps.mulled.mulled_build_tool:main
     - mulled-build-files=galaxy.tools.deps.mulled.mulled_build_files:main
-  script: $PYTHON setup.py install
+  script: $PYTHON setup.py install --single-version-externally-managed --record=record.txt
 
 requirements:
   build:

@@ -1,11 +1,11 @@
 package:
   name: ig-flowtools
-  version: "1.0.0"
+  version: "2.0.2"
 
 source:
-  fn: immport-galaxy-tools.v1.1.tar.gz
-  md5: 7ac683ec013f76950e27105353c6c6a2
-  url: https://github.com/ImmPortDB/ig-flowtools/archive/immport-galaxy-tools.v1.1.tar.gz
+  fn: immport-galaxy-tools.v2.0.2.tar.gz
+  md5: b9726cb00c6dc4b67cfe3961bbdea20c
+  url: https://github.com/ImmPortDB/ig-flowtools/archive/immport-galaxy-tools.v2.0.2.tar.gz
 
 requirements:
   build:
@@ -15,11 +15,15 @@ requirements:
     - scipy
     - jinja2
     - matplotlib
-    - 'r >=2.10.0'
+    - r
     - bioconductor-flowcore
     - bioconductor-flowcl
     - bioconductor-flowai
     - bioconductor-flowdensity
+    - bioconductor-flowviz
+    - bioconductor-ggcyto
+    - bioconductor-flowsom
+    - clustergrammer
     - flock
   run:
     - python
@@ -28,11 +32,15 @@ requirements:
     - scipy
     - jinja2
     - matplotlib
-    - 'r >=2.10.0'
+    - r
     - bioconductor-flowcore
     - bioconductor-flowcl
     - bioconductor-flowai
     - bioconductor-flowdensity
+    - bioconductor-flowviz
+    - bioconductor-ggcyto
+    - bioconductor-flowsom
+    - clustergrammer
     - flock
 
 test:
